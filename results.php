@@ -99,12 +99,12 @@ include("functions/functions.php");
 	
 	while($row_pro=mysqli_fetch_array($run_pro)){
 	
-		$pro_id = $row_pro['products_id'];
-		$pro_cat = $row_pro['product_cat'];
-		$pro_brand = $row_pro['product_brand'];
-		$pro_title = $row_pro['product_title'];
-		$pro_price = $row_pro['product_price'];
-		$pro_image = $row_pro['product_image'];
+		$pro_id = mysql_real_escape_string($row_pro['products_id']);
+		$pro_cat = mysql_real_escape_string($row_pro['product_cat']);
+		$pro_brand = mysql_real_escape_string($row_pro['product_brand']);
+		$pro_title = mysql_real_escape_string($row_pro['product_title']);
+		$pro_price = mysql_real_escape_string($row_pro['product_price']);
+		$pro_image = mysql_real_escape_string($row_pro['product_image']);
 	
 		echo "
 				<div id='single_product'>
