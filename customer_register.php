@@ -187,15 +187,15 @@ include("includes/db.php");
 		
 		$ip = getIp();
 		
-		$c_name = $_POST['c_name'];
-		$c_email = $_POST['c_email'];
-		$c_pass = $_POST['c_pass'];
+		$c_name = mysql_real_escape_string($_POST['c_name']);
+		$c_email = mysql_real_escape_string($_POST['c_email']);
+		$c_pass = mysql_real_escape_string($_POST['c_pass']);
 		$c_image = $_FILES['c_image']['name'];
 		$c_image_tmp = $_FILES['c_image']['tmp_name'];
-		$c_country = $_POST['c_country'];
-		$c_city = $_POST['c_city'];
-		$c_contact = $_POST['c_contact'];
-		$c_address = $_POST['c_address'];
+		$c_country = mysql_real_escape_string($_POST['c_country']);
+		$c_city = mysql_real_escape_string($_POST['c_city']);
+		$c_contact = mysql_real_escape_string($_POST['c_contact']);
+		$c_address = mysql_real_escape_string($_POST['c_address']);
 	
 		
 		move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
