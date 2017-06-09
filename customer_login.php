@@ -43,8 +43,8 @@ include("includes/db.php");
 	<?php 
 	if(isset($_POST['login'])){
 	
-		$c_email = $_POST['email'];
-		$c_pass = $_POST['pass'];
+		$c_email = mysql_real_escape_string($_POST['email']);
+		$c_pass = mysql_real_escape_string($_POST['pass']);
 		
 		$sel_c = "select * from customers where customer_pass='$c_pass' AND customer_email='$c_email'";
 		
